@@ -25,9 +25,9 @@ app.use(_bodyParser2.default.json());
 
 app.use('/api/users', _users2.default);
 
-/*app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/index.html'));
-});*/
+app.get('/', function (req, res) {
+  res.sendFile(_path2.default.join(__dirname, 'index.html'));
+});
 
 app.set("port", process.env.PORT || DEFAULT_PORT);
 app.listen(app.get("port"), console.log("running on port", process.env.PORT || DEFAULT_PORT));
