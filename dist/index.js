@@ -18,7 +18,7 @@ var _users2 = _interopRequireDefault(_users);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var DEFAULT_PORT = 8081;
+var DEFAULT_PORT = 8080;
 var app = (0, _express2.default)();
 
 app.use(_bodyParser2.default.json());
@@ -26,7 +26,7 @@ app.use(_bodyParser2.default.json());
 app.use('/api/users', _users2.default);
 
 app.get('/', function (req, res) {
-  res.send(200);
+  res.sendStatus(200);
 });
 
 app.set("port", process.env.PORT || DEFAULT_PORT);

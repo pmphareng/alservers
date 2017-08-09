@@ -3,7 +3,7 @@ import path from 'path';
 
 import bodyParser from 'body-parser';
 import users from './routes/users';
-const DEFAULT_PORT = 8081
+const DEFAULT_PORT = 8080
 let app = express();
 
 app.use(bodyParser.json())
@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 app.use('/api/users', users);
 
 app.get('/', (req, res) => {
-  res.send(200);
+  res.sendStatus(200);
 });
 
 app.set("port", process.env.PORT || DEFAULT_PORT);
