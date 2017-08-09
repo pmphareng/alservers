@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 app.use('/api/users', users);
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.send(process.env.PORT || DEFAULT_PORT);
 });
 
 app.set("port", process.env.PORT || DEFAULT_PORT);
